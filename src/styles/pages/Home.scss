@@ -1,0 +1,120 @@
+@import '../variables';
+
+.home-page {
+  padding: $spacing-xl 0;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+    color: $text-color;
+    font-size: $font-size-4xl;
+    font-weight: 700;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-xl;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-2xl;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto $spacing-2xl;
+    color: $text-secondary;
+    font-size: $font-size-lg;
+    line-height: 1.6;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-md;
+      margin-bottom: $spacing-xl;
+      padding: 0 $spacing-md;
+    }
+  }
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-lg;
+  padding: 0 $spacing-md;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: $spacing-md;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    padding: 0 $spacing-sm;
+  }
+}
+
+.category-card {
+  background: $surface-color;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+  transition: transform $transition-speed $transition-timing,
+              box-shadow $transition-speed $transition-timing;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $spacing-lg;
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-md;
+
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: $spacing-sm;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__description {
+    color: $text-secondary;
+    font-size: $font-size-md;
+    line-height: 1.5;
+    flex-grow: 1;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__items {
+    margin-top: $spacing-md;
+    padding-top: $spacing-md;
+    border-top: 1px solid $border-color;
+    
+    &-count {
+      color: $primary-color;
+      font-weight: 500;
+    }
+  }
+}

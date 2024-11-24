@@ -1,0 +1,205 @@
+@import '../variables';
+
+.category-page {
+  padding: $spacing-2xl 0;
+
+  @media (max-width: $tablet) {
+    padding: $spacing-xl 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $spacing-lg 0;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+
+    @media (max-width: $tablet) {
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  &__icon {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-md;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    color: $text-color;
+    margin-bottom: $spacing-md;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-2xl;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-md;
+      padding: 0 $spacing-md;
+    }
+  }
+}
+
+.sanctions-list {
+  display: grid;
+  gap: $spacing-xl;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (max-width: $tablet) {
+    gap: $spacing-lg;
+  }
+
+  @media (max-width: $mobile) {
+    gap: $spacing-md;
+    padding: 0 $spacing-sm;
+  }
+}
+
+.sanction-item {
+  background: $surface-color;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-lg;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-lg;
+    gap: $spacing-md;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 600;
+    color: $text-color;
+    margin: 0;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__date {
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    white-space: nowrap;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+    margin-bottom: $spacing-lg;
+    line-height: 1.6;
+
+    @media (max-width: $tablet) {
+      font-size: $font-size-md;
+    }
+  }
+
+  &__products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+
+    &-item {
+      background: lighten($primary-color, 45%);
+      color: $primary-color;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-sm;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__impact {
+    background: lighten($warning-color, 45%);
+    color: darken($warning-color, 10%);
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-md;
+    line-height: 1.5;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-sm;
+      padding: $spacing-sm;
+    }
+  }
+
+  &__alternatives {
+    &-title {
+      font-size: $font-size-lg;
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: $mobile) {
+        font-size: $font-size-md;
+      }
+    }
+
+    &-list {
+      display: grid;
+      gap: $spacing-md;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+      @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+        gap: $spacing-sm;
+      }
+    }
+
+    &-item {
+      background: $background-color;
+      padding: $spacing-md;
+      border-radius: $border-radius-md;
+      
+      &-name {
+        font-weight: 500;
+        color: $primary-color;
+        text-decoration: none;
+        display: block;
+        margin-bottom: $spacing-xs;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      
+      &-description {
+        font-size: $font-size-sm;
+        color: $text-secondary;
+        line-height: 1.5;
+      }
+    }
+  }
+}

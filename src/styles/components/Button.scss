@@ -1,0 +1,117 @@
+@import '../variables';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  border-radius: $border-radius-md;
+  font-weight: 500;
+  transition: all $transition-speed $transition-timing;
+  white-space: nowrap;
+  cursor: pointer;
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  // Variants
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+    border: 1px solid $primary-color;
+
+    &:hover:not(:disabled) {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: white;
+    border: 1px solid $secondary-color;
+
+    &:hover:not(:disabled) {
+      background-color: darken($secondary-color, 10%);
+      border-color: darken($secondary-color, 10%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover:not(:disabled) {
+      background-color: rgba($primary-color, 0.1);
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    color: $primary-color;
+    border: none;
+    padding: 0;
+
+    &:hover:not(:disabled) {
+      color: darken($primary-color, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  // Sizes
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+    height: 32px;
+  }
+
+  &--medium {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-md;
+    height: 40px;
+  }
+
+  &--large {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-lg;
+    height: 48px;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  // Icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+  }
+
+  &__text {
+    display: inline-block;
+  }
+}
+
+// Responsive
+@media (max-width: $mobile) {
+  .button {
+    &--small {
+      padding: $spacing-xs;
+      height: 28px;
+    }
+
+    &--medium {
+      padding: $spacing-sm;
+      height: 36px;
+    }
+
+    &--large {
+      padding: $spacing-md;
+      height: 44px;
+    }
+  }
+}

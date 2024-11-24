@@ -1,0 +1,6 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://YOUR_USERNAME.github.io/it-sanctions-info/sitemap.xml
